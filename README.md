@@ -29,7 +29,7 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"team":"Dev", "first_na
 - Vacation (+update & delete):
 curl -i -H "Content-Type: application/json" -X POST -d '{"employee_id":"1", "start_date":"2020-10-10", "end_date": "2020-10-29", "type":"unpaid"}' http://localhost:5000/vacation/create
 
-curl -i -H "Content-Type: application/json" -X POST -d '{"employee_id":"1", "start_date":"2020-10-10", "end_date": "2020-10-29", "type":"paid_normal"}' http://localhost:5000/vacation/create
+curl -i -H "Content-Type: application/json" -X POST -d '{"id":"1", "start_date":"2020-10-10", "end_date": "2020-10-29"}' http://localhost:5000/vacation/update
 
 http://localhost:5000/vacation/delete/2
 
