@@ -1,0 +1,34 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS team;
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS vacation;
+
+CREATE TABLE user (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT UNIQUE NOT NULL,
+  password TEXT NOT NULL
+);
+
+CREATE TABLE team (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE NOT NULL
+);
+
+CREATE TABLE employee (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  team_id INTEGER NOT NULL,
+  first_name TEXT UNIQUE NOT NULL,
+  last_name TEXT UNIQUE NOT NULL,
+  nb_vacation_days INTEGER DEFAULT 0,
+  FOREIGN KEY (team_id) REFERENCES team (id),
+  UNIQUE(first_name, last_name) ON CONFLICT IGNORE
+);
+
+CREATE TABLE vacation (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  employee_id INTEGER NOT NULL,
+  type TEXT NOT NULL default "paid_normal",
+  start_date DATE NOT NULL,
+  end_date DATE NOT NULL,
+  FOREIGN KEY (employee_id) REFERENCES employee (id)
+);

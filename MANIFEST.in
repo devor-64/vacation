@@ -1,0 +1,2 @@
+include worklife_vacation/schema.sql
+global-exclude *.pyc
