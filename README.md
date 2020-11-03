@@ -19,6 +19,7 @@ $ flask run
 =====================================================================================================================
 
 You can create:
+--------------
  - team:
 curl -i -H "Content-Type: application/json" -X POST -d '{"name":"Dev"}' http://localhost:5000/team/create
 
@@ -27,11 +28,17 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"team":"Dev", "first_na
 
 - Vacation (+update & delete):
 curl -i -H "Content-Type: application/json" -X POST -d '{"employee_id":"1", "start_date":"2020-10-10", "end_date": "2020-10-29", "type":"unpaid"}' http://localhost:5000/vacation/create
+
 curl -i -H "Content-Type: application/json" -X POST -d '{"employee_id":"1", "start_date":"2020-10-10", "end_date": "2020-10-29", "type":"paid_normal"}' http://localhost:5000/vacation/create
+
 http://localhost:5000/vacation/delete/2
 
-print all teams / employees / vacations at:
+
+Display all teams / employees / vacations at:
+------------------------------------------
 http://localhost:5000/team
+
 http://localhost:5000/employee
+
 http://localhost:5000/vacation
 
