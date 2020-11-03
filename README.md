@@ -9,12 +9,14 @@ I used DB request but might have used models directly
 
 * BEFORE launching first, use:
 ==============================
+
 $ export FLASK_APP=worklife_vacation
 
 $ flask init-db           (first time only)
 
 * then launch with:
 ----------------
+
 $ flask run
 
 ======================================================================================================
